@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 这是master分支内容new3
+=======
+这是master分支内容new2
+>>>>>>> 264d37f0cd6a32c301ba76735e85f14915606ffa
