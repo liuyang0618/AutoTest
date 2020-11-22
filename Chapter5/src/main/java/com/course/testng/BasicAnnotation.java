@@ -3,6 +3,12 @@ package com.course.testng;
 import org.testng.annotations.*;
 
 public class BasicAnnotation {
+    @BeforeSuite
+    public  void beforeSuite(){
+        System.out.println("beforeSuite");
+    }
+
+
     @BeforeClass
     public void beforeClass() {
         System.out.println("beforeClass");
@@ -31,5 +37,9 @@ public class BasicAnnotation {
     @AfterClass
     public void afterClass() {
         System.out.println("afterClass");
+    }
+    @AfterSuite
+    public  void afterSuite(){
+        System.out.println("afterSuite");
     }
 }
