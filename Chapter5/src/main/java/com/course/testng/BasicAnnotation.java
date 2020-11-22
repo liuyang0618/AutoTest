@@ -10,17 +10,17 @@ public class BasicAnnotation {
 
     @Test
     public void testCase1() {
-        System.out.print("第一个测试用例!");
+        System.out.println("第一个测试用例!");
     }
 
     @Test
     public void testCase2() {
-        System.out.print("第二个测试用例！");
+        System.out.println("第二个测试用例！");
     }
 
     @BeforeMethod
     public void beforeMethod() {
-        System.out.print("这是beforeMethod方法");
+        System.out.println("这是beforeMethod方法");
     }
 
     @AfterMethod
