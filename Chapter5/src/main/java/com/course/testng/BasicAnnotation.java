@@ -8,6 +8,14 @@ public class BasicAnnotation {
         System.out.println("beforeSuite");
     }
 
+    @BeforeTest
+    public  void beforeTest(){
+        System.out.println("beforeTest");
+    }
+    @AfterTest
+    public  void afterTest(){
+        System.out.println("afterTest");
+    }
 
     @BeforeClass
     public void beforeClass() {
