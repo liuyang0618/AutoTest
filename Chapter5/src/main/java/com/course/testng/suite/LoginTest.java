@@ -1,10 +1,9 @@
 package com.course.testng.suite;
 
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
 public class LoginTest {
+
     @BeforeTest
     public  void beforeTest(){
         System.out.println("LoginTest的beforeTest");
@@ -13,6 +12,16 @@ public class LoginTest {
     public  void afterTest(){
         System.out.println("LoginTest的afterTest");
     }
+
+    @BeforeClass
+    public  void beforeClass(){
+        System.out.println("LoginTest的beforeClass");
+    }
+    @AfterClass
+    public  void afterClass(){
+        System.out.println("LoginTest的afterClass");
+    }
+
 
     @Test
     public void loginSuccess(){
