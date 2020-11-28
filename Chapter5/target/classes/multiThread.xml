@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<suite name="multi" parallel="classes" thread-count="2">
+    <!--
+    parallel：
+        -methods: 所有用例都可以在不同线程下运行；
+        -classes：不同的class类可以在不同的线程下运行；
+                  相同的class类在同线程下运行；
+        -tests：不同的test标签可以在不同的线程下运行；
+              相同的test标签下的方法在同线程下运行；
+
+    thread-count：最大线程并发数
+ -->
+    <test name="demo1" >
+        <classes name="c1">
+            <class name="com.course.testng.multiThread.multiThreadOnAnnotation"/>
+        </classes>
+    </test>
+    <test name="demo2">
+        <classes name="c2">
+            <class name="com.course.testng.multiThread.multiThreadOnXml"/>
+            <class name="com.course.testng.multiThread.multiThreadOnAnnotation"/>
+        </classes>
+    </test>
+</suite>
