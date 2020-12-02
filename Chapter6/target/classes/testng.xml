@@ -2,16 +2,21 @@
 <suite name="test suite">
     <test name="test">
         <classes name="extend">
-            <class name="com.extend.demo.testMethodDemo"/>
+            <class name="com.tester.extend.demo.testMethodDemo">
                 <methods>
                     <include name="test1"/>
                     <include name="test2"/>
                     <include name="test3"/>
                     <include name="logDemo"/>
                 </methods>
+            </class>
         </classes>
     </test>
     <listeners>
-        <listener class-name="com.vimalselvam.testng.listener.ExtentTestNgFormatter"/>
+        <!-- 添加ExtentRport监听 -->
+<!--        <listener class-name="com.vimalselvam.testng.listener.ExtentTestNgFormatter"/>-->
+<!--        <listener class-name="com.tester.extend.demo.ExtentTestNGIReporterListener"/>-->
+        <listener class-name="com.tester.extend.demo.ExtentTestNGIReporterListener"/>
     </listeners>
+
 </suite>

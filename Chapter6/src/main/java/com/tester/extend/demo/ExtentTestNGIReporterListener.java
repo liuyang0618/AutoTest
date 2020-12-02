@@ -3,6 +3,7 @@ package com.tester.extend.demo;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.ResourceCDN;
 import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.model.TestAttribute;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
@@ -14,14 +15,14 @@ import org.testng.xml.XmlSuite;
 import java.io.File;
 import java.util.*;
 
-public class ExtentTestNGIReporterListenerOld implements IReporter {
+public class ExtentTestNGIReporterListener implements IReporter {
     //生成的路径以及文件名
     private static final String OUTPUT_FOLDER = "test-output/";
     private static final String FILE_NAME = "index.html";
 
     private ExtentReports extent;
 
-//    @Override
+    @Override
     public void generateReport(List<XmlSuite> xmlSuites, List<ISuite> suites, String outputDirectory) {
         init();
         boolean createSuiteNode = false;
@@ -108,6 +109,9 @@ public class ExtentTestNGIReporterListenerOld implements IReporter {
         }
         ExtentHtmlReporter htmlReporter = new ExtentHtmlReporter(OUTPUT_FOLDER + FILE_NAME);
         // 设置静态文件的DNS
+        //怎么样解决cdn.rawgit.com访问不了的情况
+        htmlReporter.config().setResourceCDN(ResourceCDN.EXTENTREPORTS);
+
         htmlReporter.config().setDocumentTitle("api自动化测试报告");
         htmlReporter.config().setReportName("api自动化测试报告");
         htmlReporter.config().setChartVisibilityOnOpen(true);
@@ -135,7 +139,7 @@ public class ExtentTestNGIReporterListenerOld implements IReporter {
         if (tests.size() > 0) {
             //调整用例排序，按时间排序
             Set<ITestResult> treeSet = new TreeSet<ITestResult>(new Comparator<ITestResult>() {
-//                @Override
+                @Override
                 public int compare(ITestResult o1, ITestResult o2) {
                     return o1.getStartMillis()<o2.getStartMillis()?-1:1;
                 }

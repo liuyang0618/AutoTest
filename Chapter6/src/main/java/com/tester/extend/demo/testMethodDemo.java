@@ -1,4 +1,4 @@
-package com.extend.demo;
+package com.tester.extend.demo;
 
 import org.testng.Assert;
 import org.testng.Reporter;
@@ -13,8 +13,10 @@ public class testMethodDemo {
     }
     @Test
     public void test2(){
+        Assert.assertEquals("ly","ly");
         System.out.println("这是test2（）");
         Assert.assertEquals("1","2");
+        Assert.assertEquals("ly","lyman");
     }
 
     @Test
