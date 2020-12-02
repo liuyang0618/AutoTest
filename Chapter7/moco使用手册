@@ -1,0 +1,4 @@
+进入到moco执行目录，如：Chapter7，执行：
+java -jar moco-runner-0.11.0-standalone.jar http -p 8888 -c startupOnGet.json
+
+之后可以通过浏览器或者jmeter访问

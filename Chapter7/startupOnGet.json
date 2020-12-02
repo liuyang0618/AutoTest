@@ -1,0 +1,61 @@
+[
+    {
+        "description": "moco模拟get请求",
+        "request":{
+            "uri": "/get",
+            "method": "get"
+        },
+        "response":{
+            "text": "第1个mock模拟请求：get！"
+        }
+    },
+    {
+        "description": "moco模拟get带参数请求",
+        "request":{
+            "uri": "/get/param",
+            "method": "get",
+            "queries": {
+                "name": "zhangsan",
+                "age": "18"
+            }
+        },
+        "response":{
+            "text": "第2个mock模拟请求：moco模拟get带参数请求！"
+        }
+    },
+    {
+        "description": "moco模拟post带参数请求(forms)",
+        "request":{
+            "uri": "/post/param",
+            "method": "post",
+            "forms": {
+                "name": "zhangsan",
+                "age": "18"
+            }
+        },
+        "response":{
+            "text": "第3个mock模拟请求：moco模拟post带参数请求(forms)!"
+        }
+    },
+    {
+        "description": "moco模拟post带headers、cookies请求（json）",
+        "request": {
+            "uri": "/post/param/mix",
+            "method": "post",
+            "headers":{
+                "content-type":"application/json"
+            },
+            "cookies": {
+                "login":"true"
+            },
+            "json": {
+                "name": "zhangsan",
+                "age": "18"
+            }
+        },
+        "response": {
+            "status":200,
+            "text": "第4个mock模拟请求：headers、cookies请求（json）!"
+        }
+    }
+]
