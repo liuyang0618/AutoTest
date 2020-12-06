@@ -55,7 +55,46 @@
         },
         "response": {
             "status":200,
-            "text": "第4个mock模拟请求：headers、cookies请求（json）!"
+            "text": "第4个mock模拟请求：headers、cookies请求（json）!",
+            "cookies":{
+                "login":"true"
+            }
+        }
+    },
+    {
+        "description": "获取getCookies",
+        "request": {
+            "uri": "/get/cookies",
+            "method": "get"
+        },
+        "response": {
+            "status":200,
+            "text": "获取getCookies",
+            "cookies":{
+                "login":"true"
+            }
+        }
+    }
+,
+    {
+        "description": "/post/cookies",
+        "request": {
+            "uri": "/post/cookies",
+            "method": "post",
+            "cookies": {
+                "login":"true"
+            },
+            "json": {
+                "name": "zhangsan",
+                "age": "18"
+            }
+        },
+        "response": {
+            "status": "200",
+            "json":{
+                "success":"1",
+                "ly": "33"
+            }
         }
     }
 ]
